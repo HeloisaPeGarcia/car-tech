@@ -25,7 +25,7 @@ function App() {
       </nav>
 
       <section className="hero">
-        {/* Conteúdo da seção principal */}
+        {/* Conteúdo da seção principa */}
       </section>
 
       <Routes>
