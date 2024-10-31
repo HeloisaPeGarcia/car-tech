@@ -21,7 +21,7 @@ function App() {
         <Routes>
           <Route path="/Portfolio" element={<Portfolio />} />
           <Route path="/Form" element={<Form />} />
-          {/* Rota padrão (opcional) */}
+          {/* Rota padrão () */}
         
         </Routes>
       </section>
