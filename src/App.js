@@ -7,35 +7,43 @@ import Portfolio from './components/Portfolio';
 import Servicos from './components/Servicos';
 import Form from './components/Form';
 import Avaliacao from './components/Avaliacao';
-import Sobre from './components/Sobre'
+import Sobre from './components/Sobre';
 import Login from './components/Login';
-import { Routes, Route } from 'react-router-dom'; // Adicione o Link
+import { Routes, Route, useLocation } from 'react-router-dom';
 
 function App() {
+  const location = useLocation();
+
   return (
     <div className="App">
-      <Header />
+      {/* Renderiza o Header apenas se a rota não for "/login" */}
+      {location.pathname !== '/login' && <Header />}
+
       <section className="hero">
         <Routes>
-        <Route path="#Login" element={<Login />} />
-          <Route path="#Portfolio" element={<Portfolio />} />
-          <Route path="#about" element={<Sobre />} />
-          <Route path="#Form" element={<Form />} />
-          {/* Rota padrão () */}
+          {/* Rota para o componente Login (exibe apenas o Login) */}
+          <Route path="/login" element={<Login />} />
+
+          {/* Outras rotas que renderizam seções específicas */}
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/about" element={<Sobre />} />
+          <Route path="/form" element={<Form />} />
         </Routes>
-        <Routes>
-        {/* Definindo a rota para o componente Login */}
-        <Route path="/login" element={<Login />} />
-      </Routes>
       </section>
-       < Sobre /> 
-       <Line />
-       <Servicos/>
-       <Line />
-       <Avaliacao /> 
-      <Portfolio/>
-      <Line />
-      <Footer />
+
+      {/* Renderiza o conteúdo principal apenas se a rota não for "/login" */}
+      {location.pathname !== '/login' && (
+        <>
+          <Sobre />
+          <Line />
+          <Servicos />
+          <Line />
+          <Avaliacao />
+          <Portfolio />
+          <Line />
+          <Footer />
+        </>
+      )}
     </div>
   );
 }
