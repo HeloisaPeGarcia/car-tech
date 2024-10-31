@@ -6,27 +6,41 @@ import Footer from './components/Footer';
 import Portfolio from './components/Portfolio';
 import Servicos from './components/Servicos';
 import Form from './components/Form';
-import { Routes, Route, Link } from 'react-router-dom'; // Adicione o Link
+import Avaliacoes from './components/Avaliacao'; 
+import Sobre from './components/Sobre';
+import { Routes, Route, Link } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
       <Header />
+
       <nav>
-        {/* Links para navegação */}
-        <Link to="/Portfolio">Portfolio</Link>
-        <Link to="/Form">Form</Link>
+        <ul>
+          <li><Link to="/Header">Home</Link></li>
+          <li><Link to="/Portfolio">Portfolio</Link></li>
+          <li><Link to="/Servicos">Serviços</Link></li>
+          <li><Link to="/Form">Contato</Link></li>
+        </ul>
       </nav>
+
       <section className="hero">
-        <Routes>
-          <Route path="/Portfolio" element={<Portfolio />} />
-          <Route path="/Form" element={<Form />} />
-          {/* Rota padrão () */}
-        
-        </Routes>
+        {/* Conteúdo da seção principal */}
       </section>
-      <Servicos/>
-      <Portfolio/>
+
+      <Routes>
+        <Route path="/Header" element={<Header />} />
+        <Route path="/Portfolio" element={<Portfolio />} />
+        <Route path="/Servicos" element={<Servicos />} />
+        <Route path="/Form" element={<Form />} />
+      </Routes>
+
+      <div className="content">
+        <Sobre />
+        <Servicos />
+        <Avaliacoes /> {/* Renderiza as avaliações aqui */}
+      </div>
+
       <Line />
       <Footer />
     </div>
