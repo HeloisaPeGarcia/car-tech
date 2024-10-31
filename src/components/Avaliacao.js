@@ -5,19 +5,19 @@ function TestimonialSection() {
   const testimonials = [
     {
       name: 'Ana Silva',
-      title: 'Cliente Satisfeita',
+      title: '★★★★★',
       quote: 'Meu carro ficou como novo! Serviço excelente e atendimento impecável.',
       image: 'https://via.placeholder.com/150',
     },
     {
       name: 'Bruno Santos',
-      title: 'Cliente Fiel',
+      title: '★★★★★',
       quote: 'A customização esportiva ficou incrível. Recomendo a todos!',
       image: 'https://via.placeholder.com/150',
     },
     {
       name: 'Matheus Ferraz',
-      title: 'Cliente Regular',
+      title: '★★★★★',
       quote: 'A revisão foi rápida e eficiente. Muito satisfeito com o serviço.',
       image: 'https://via.placeholder.com/150',
     },

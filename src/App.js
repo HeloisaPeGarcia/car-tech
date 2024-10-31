@@ -8,7 +8,8 @@ import Servicos from './components/Servicos';
 import Form from './components/Form';
 import Avaliacao from './components/Avaliacao';
 import Sobre from './components/Sobre'
-import { Routes, Route, Link } from 'react-router-dom'; // Adicione o Link
+import Login from './components/Login';
+import { Routes, Route } from 'react-router-dom'; // Adicione o Link
 
 function App() {
   return (
@@ -16,18 +17,22 @@ function App() {
       <Header />
       <section className="hero">
         <Routes>
-          <Route path="/Portfolio" element={<Portfolio />} />
-          <Route path="/Form" element={<Form />} />
+        <Route path="#Login" element={<Login />} />
+          <Route path="#Portfolio" element={<Portfolio />} />
+          <Route path="#about" element={<Sobre />} />
+          <Route path="#Form" element={<Form />} />
           {/* Rota padrão () */}
-        
         </Routes>
+        <Routes>
+        {/* Definindo a rota para o componente Login */}
+        <Route path="/login" element={<Login />} />
+      </Routes>
       </section>
-      <div> <Sobre /> </div>
-      <Line />
-      <Servicos/>
-      <Line />
-      <div> <Avaliacao /> </div>
-    
+       < Sobre /> 
+       <Line />
+       <Servicos/>
+       <Line />
+       <Avaliacao /> 
       <Portfolio/>
       <Line />
       <Footer />
