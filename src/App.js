@@ -6,17 +6,14 @@ import Footer from './components/Footer';
 import Portfolio from './components/Portfolio';
 import Servicos from './components/Servicos';
 import Form from './components/Form';
+import Avaliacao from './components/Avaliacao';
+import Sobre from './components/Sobre'
 import { Routes, Route, Link } from 'react-router-dom'; // Adicione o Link
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <nav>
-        {/* Links para navegação */}
-        <Link to="/Portfolio">Portfolio</Link>
-        <Link to="/Form">Form</Link>
-      </nav>
       <section className="hero">
         <Routes>
           <Route path="/Portfolio" element={<Portfolio />} />
@@ -25,7 +22,12 @@ function App() {
         
         </Routes>
       </section>
+      <div> <Sobre /> </div>
+      <Line />
       <Servicos/>
+      <Line />
+      <div> <Avaliacao /> </div>
+    
       <Portfolio/>
       <Line />
       <Footer />
