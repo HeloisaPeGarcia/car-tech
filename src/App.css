@@ -420,7 +420,7 @@ button:hover {
 }
 .inventory-management {
   padding: 20px;
-  background-color: #f5f5f5;
+  background-color: #1a1a1a;
 }
 
 .filters {
@@ -444,7 +444,7 @@ button:hover {
 }
 
 .inventory-item {
-  background-color: #fff;
+  background-color: #202020;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
@@ -457,11 +457,11 @@ button:hover {
 .inventory-item h3 {
   margin: 10px 0;
   font-size: 18px;
-  color: #333;
+  color: #ffffff;
 }
 
 .inventory-item p {
-  color: #666;
+  color: #ffffff;
 }
 
 .inventory-item button {

@@ -3,14 +3,13 @@ import { useNavigate } from "react-router-dom";
 import '../App.css';
 import Footer from './Footer';
 import Header from './Header';
-import  Estoque from './Estoque';
 
 function Login() {
   const navigate = useNavigate(); // Inicializa o hook de navegação
 
   const handleSubmit = (e) => {
     e.preventDefault(); // Evita o comportamento padrão de recarregar a página
-    navigate(Estoque); // Redireciona para a página de Estoque
+    navigate('/estoque'); // Redireciona para a página de Estoque
   };
 
   return (
@@ -79,3 +78,4 @@ const styles = {
 };
 
 export default Login;
+

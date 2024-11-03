@@ -9,6 +9,7 @@ import Form from './components/Form';
 import Avaliacao from './components/Avaliacao';
 import Sobre from './components/Sobre';
 import Login from './components/Login';
+import Estoque from './components/Estoque';
 import { Routes, Route, useLocation } from 'react-router-dom';
 
 function App() {
@@ -16,14 +17,16 @@ function App() {
 
   return (
     <div className="App">
+      {/* Sempre renderiza o Header */}
       <Header />
-      {/* Renderiza o Header apenas se a rota não for "/login" */}
-      {location.pathname !== '/login'}
 
       <section className="hero">
         <Routes>
-          {/* Rota para o componente Login (exibe apenas o Login) */}
+          {/* Rota para o componente Login */}
           <Route path="/login" element={<Login />} />
+
+          {/* Rota para a página de Estoque */}
+          <Route path="/estoque" element={<Estoque />} />
 
           {/* Outras rotas que renderizam seções específicas */}
           <Route path="/portfolio" element={<Portfolio />} />
@@ -31,7 +34,7 @@ function App() {
           <Route path="/form" element={<Form />} />
         </Routes>
       </section>
-
+     
       {/* Renderiza o conteúdo principal apenas se a rota não for "/login" */}
       {location.pathname !== '/login' && (
         <>
