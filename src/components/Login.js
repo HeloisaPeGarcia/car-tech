@@ -1,24 +1,37 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import '../App.css';
-function Login(){
+import Footer from './Footer';
+import Header from './Header';
+import  Estoque from './Estoque';
+
+function Login() {
+  const navigate = useNavigate(); // Inicializa o hook de navegação
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Evita o comportamento padrão de recarregar a página
+    navigate(Estoque); // Redireciona para a página de Estoque
+  };
+
   return (
-    <section id="Login">
-         <div style={styles.container}>
-      <form style={styles.form}>
-        <label style={styles.label}>Email</label>
-        <input type="email" style={styles.input} placeholder="Value" />
+    <section id="Login" className="page">
+      <Header />
+      <div style={styles.container}>
+        <form style={styles.form} onSubmit={handleSubmit}>
+          <label style={styles.label}>Email</label>
+          <input type="email" style={styles.input} placeholder="Value" />
 
-        <label style={styles.label}>Senha</label>
-        <input type="password" style={styles.input} placeholder="Value" />
+          <label style={styles.label}>Senha</label>
+          <input type="password" style={styles.input} placeholder="Value" />
 
-        <button type="submit" style={styles.button}>Sign In</button>
-      </form>
-      <a href="#" style={styles.link}>Esqueceu a senha?</a>
-    </div>
+          <button type="submit" style={styles.button}>Sign In</button>
+        </form>
+        <a href="#" style={styles.link}>Esqueceu a senha?</a>
+      </div>
+      <Footer />
     </section>
-   
   );
-};
+}
 
 const styles = {
   container: {
@@ -26,7 +39,8 @@ const styles = {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    height: "100vh",
+    minHeight: "100vh",  // Define altura mínima para preencher a tela inteira
+    width: "100vw",       // Largura total da tela
     backgroundColor: "#1a1a1a",
     color: "#ffffff",
   },

@@ -21,7 +21,6 @@ function Header() {
         <Link to="/login">
           <button className="login">Login</button>
         </Link>
-        <button className="register">Register</button>
       </div>
     </header>
   );

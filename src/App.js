@@ -16,8 +16,9 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       {/* Renderiza o Header apenas se a rota não for "/login" */}
-      {location.pathname !== '/login' && <Header />}
+      {location.pathname !== '/login'}
 
       <section className="hero">
         <Routes>
