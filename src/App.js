@@ -10,6 +10,7 @@ import Avaliacao from './components/Avaliacao';
 import Sobre from './components/Sobre';
 import Login from './components/Login';
 import Estoque from './components/Estoque';
+
 import { Routes, Route, useLocation } from 'react-router-dom';
 
 function App() {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import Edicao from './Edicao';
 
 function InventoryManagement() {
   const [items, setItems] = useState([
@@ -19,6 +19,8 @@ function InventoryManagement() {
     brand: '',
   });
 
+  const [editingItem, setEditingItem] = useState(null);
+
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
     setFilters({ ...filters, [name]: value });
@@ -34,13 +36,17 @@ function InventoryManagement() {
     );
   });
 
-  const handleEdit = (id) => {
-    // Lógica para editar o item
-    console.log('Edit item:', id);
+  const handleEdit = (item) => {
+    setEditingItem(item);
   };
 
   const handleDelete = (id) => {
     setItems(items.filter(item => item.id !== id));
+  };
+
+  const handleSave = (updatedItem) => {
+    setItems(items.map(item => (item.id === updatedItem.id ? updatedItem : item)));
+    setEditingItem(null);
   };
 
   return (
@@ -88,11 +94,14 @@ function InventoryManagement() {
             <p>Preço: R$ {item.price}</p>
             <p>Cor: {item.color}</p>
             <p>Marca: {item.brand}</p>
-            <button onClick={() => handleEdit(item.id)}>Editar</button>
+            <button onClick={() => handleEdit(item)}>Editar</button>
             <button onClick={() => handleDelete(item.id)}>Excluir</button>
           </div>
         ))}
       </div>
+      {editingItem && (
+        <Edicao item={editingItem} onSave={handleSave} onCancel={() => setEditingItem(null)} />
+      )}
     </div>
   );
 }
