@@ -418,3 +418,72 @@ button:hover {
 .feature-card p {
   color: #ffffff;
 }
+.inventory-management {
+  height: 100%; /* Garante que o filtro ocupe toda a altura disponível */
+  display: flex;
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+.filters {
+  height: 100%; /* Garante que o filtro ocupe toda a altura disponível */
+  width: 250px;
+  padding: 20px;
+  background-color: #333;
+}
+
+.filters h3 {
+  font-size: 18px;
+}
+
+.filter-section {
+  margin-bottom: 20px;
+}
+
+.filter-section label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.inventory-items {
+  height: 100%; /* Garante que o filtro ocupe toda a altura disponível */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.inventory-item {
+  height: 100%; /* Garante que o filtro ocupe toda a altura disponível */
+  background-color: #2a2a2a;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.inventory-item h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.inventory-item p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.inventory-item button {
+  margin: 5px;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.inventory-item button:first-of-type {
+  background-color: #4CAF50;
+}
+
+.inventory-item button:last-of-type {
+  background-color: #f44336;
+}

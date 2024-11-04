@@ -1,3 +1,4 @@
+// App.js
 import React from 'react';
 import './App.css';
 import Header from './components/Header';
@@ -11,6 +12,7 @@ import Sobre from './components/Sobre';
 import Login from './components/Login';
 import Estoque from './components/Estoque';
 import EditItemForm from './components/Edicao';
+import CadastrarServico from './components/CadastroServicos';
 import { Routes, Route, useLocation } from 'react-router-dom';
 
 function App() {
@@ -19,19 +21,22 @@ function App() {
 
   return (
     <div className="App">
+      {/* Exibe o Header em todas as rotas, exceto /estoque e /edicao */}
       {!isFullScreenRoute && <Header />}
 
       <section className={`hero ${isFullScreenRoute ? 'full-screen' : ''}`}>
         <Routes>
+          <Route path="/CadastrarServico" element={<CadastrarServico />} /> {/* Corrigido para a rota correspondente */}
           <Route path="/login" element={<Login />} />
           <Route path="/estoque" element={<Estoque />} />
           <Route path="/edicao" element={<EditItemForm />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/about" element={<Sobre />} />
-          <Route path="/form" element={<Form />} />
+          <Route path="/form" element={<Form />} /> {/* Rota para o Formulário */}
         </Routes>
       </section>
 
+      {/* Exibe o conteúdo adicional nas rotas que não são fullscreen */}
       {!isFullScreenRoute && location.pathname !== '/login' && (
         <>
           <Sobre />
