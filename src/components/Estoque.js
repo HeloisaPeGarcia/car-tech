@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Edicao from './Edicao';
 
 function InventoryManagement() {
@@ -20,6 +21,7 @@ function InventoryManagement() {
   });
 
   const [editingItem, setEditingItem] = useState(null);
+  const navigate = useNavigate();
 
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
@@ -37,7 +39,7 @@ function InventoryManagement() {
   });
 
   const handleEdit = (item) => {
-    setEditingItem(item);
+    navigate('/edicao', { state: { item } });
   };
 
   const handleDelete = (id) => {
@@ -49,8 +51,61 @@ function InventoryManagement() {
     setEditingItem(null);
   };
 
+  const styles = {
+    inventoryManagement: {
+      backgroundColor: '#333',
+      color: 'white',
+      padding: '20px',
+      border: '1px solid white',
+      borderRadius: '8px',
+    },
+    filters: {
+      input: {
+        margin: '5px',
+        padding: '10px',
+        border: '1px solid white',
+        borderRadius: '4px',
+        backgroundColor: '#444',
+        color: 'white',
+      },
+      select: {
+        margin: '5px',
+        padding: '10px',
+        border: '1px solid white',
+        borderRadius: '4px',
+        backgroundColor: '#444',
+        color: 'white',
+      },
+    },
+    inventoryList: {
+      marginTop: '20px',
+    },
+    inventoryItem: {
+      backgroundColor: '#333',
+      border: '1px solid white',
+      borderRadius: '8px',
+      padding: '20px',
+      marginBottom: '10px',
+    },
+    inventoryItemText: {
+      margin: '5px 0',
+    },
+    button: {
+      marginRight: '10px',
+      padding: '10px 15px',
+      border: 'none',
+      borderRadius: '4px',
+      backgroundColor: '#555',
+      color: 'white',
+      cursor: 'pointer',
+    },
+    buttonHover: {
+      backgroundColor: '#666',
+    },
+  };
+
   return (
-    <div className="inventory-management">
+    <div style={styles.inventoryManagement}>
       <h2>Gerenciamento de Estoque</h2>
       <div className="filters">
         <input
@@ -59,6 +114,7 @@ function InventoryManagement() {
           placeholder="Palavra-chave"
           value={filters.keyword}
           onChange={handleFilterChange}
+          style={styles.filters.input}
         />
         <input
           type="number"
@@ -66,6 +122,7 @@ function InventoryManagement() {
           placeholder="Preço mínimo"
           value={filters.minPrice}
           onChange={handleFilterChange}
+          style={styles.filters.input}
         />
         <input
           type="number"
@@ -73,29 +130,44 @@ function InventoryManagement() {
           placeholder="Preço máximo"
           value={filters.maxPrice}
           onChange={handleFilterChange}
+          style={styles.filters.input}
         />
-        <select name="color" value={filters.color} onChange={handleFilterChange}>
+        <select name="color" value={filters.color} onChange={handleFilterChange} style={styles.filters.select}>
           <option value="">Cor</option>
           <option value="Preto">Preto</option>
           <option value="Branco">Branco</option>
           <option value="Cinza">Cinza</option>
         </select>
-        <select name="brand" value={filters.brand} onChange={handleFilterChange}>
+        <select name="brand" value={filters.brand} onChange={handleFilterChange} style={styles.filters.select}>
           <option value="">Marca</option>
           <option value="BMW">BMW</option>
           <option value="AUDI">AUDI</option>
           <option value="PORSCHE">PORSCHE</option>
         </select>
       </div>
-      <div className="inventory-list">
+      <div style={styles.inventoryList}>
         {filteredItems.map(item => (
-          <div key={item.id} className="inventory-item">
-            <h3>{item.name}</h3>
-            <p>Preço: R$ {item.price}</p>
-            <p>Cor: {item.color}</p>
-            <p>Marca: {item.brand}</p>
-            <button onClick={() => handleEdit(item)}>Editar</button>
-            <button onClick={() => handleDelete(item.id)}>Excluir</button>
+          <div key={item.id} style={styles.inventoryItem}>
+            <h3 style={styles.inventoryItemText}>{item.name}</h3>
+            <p style={styles.inventoryItemText}>Preço: R$ {item.price}</p>
+            <p style={styles.inventoryItemText}>Cor: {item.color}</p>
+            <p style={styles.inventoryItemText}>Marca: {item.brand}</p>
+            <button
+              onClick={() => handleEdit(item)}
+              style={styles.button}
+              onMouseOver={(e) => e.currentTarget.style.backgroundColor = styles.buttonHover.backgroundColor}
+              onMouseOut={(e) => e.currentTarget.style.backgroundColor = styles.button.backgroundColor}
+            >
+              Editar
+            </button>
+            <button
+              onClick={() => handleDelete(item.id)}
+              style={styles.button}
+              onMouseOver={(e) => e.currentTarget.style.backgroundColor = styles.buttonHover.backgroundColor}
+              onMouseOut={(e) => e.currentTarget.style.backgroundColor = styles.button.backgroundColor}
+            >
+              Excluir
+            </button>
           </div>
         ))}
       </div>

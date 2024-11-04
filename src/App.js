@@ -10,34 +10,29 @@ import Avaliacao from './components/Avaliacao';
 import Sobre from './components/Sobre';
 import Login from './components/Login';
 import Estoque from './components/Estoque';
-
+import EditItemForm from './components/Edicao';
 import { Routes, Route, useLocation } from 'react-router-dom';
 
 function App() {
   const location = useLocation();
+  const isFullScreenRoute = location.pathname === '/estoque' || location.pathname === '/edicao';
 
   return (
     <div className="App">
-      {/* Sempre renderiza o Header */}
-      <Header />
+      {!isFullScreenRoute && <Header />}
 
-      <section className="hero">
+      <section className={`hero ${isFullScreenRoute ? 'full-screen' : ''}`}>
         <Routes>
-          {/* Rota para o componente Login */}
           <Route path="/login" element={<Login />} />
-
-          {/* Rota para a página de Estoque */}
           <Route path="/estoque" element={<Estoque />} />
-
-          {/* Outras rotas que renderizam seções específicas */}
+          <Route path="/edicao" element={<EditItemForm />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/about" element={<Sobre />} />
           <Route path="/form" element={<Form />} />
         </Routes>
       </section>
-     
-      {/* Renderiza o conteúdo principal apenas se a rota não for "/login" */}
-      {location.pathname !== '/login' && (
+
+      {!isFullScreenRoute && location.pathname !== '/login' && (
         <>
           <Sobre />
           <Line />
