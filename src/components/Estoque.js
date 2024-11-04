@@ -47,8 +47,9 @@ function InventoryManagement() {
   };
 
   return (
+    
     <div className="inventory-management">
-          <Navbar />
+        <Navbar />
       <aside className="filters">
         <h3>Palavra chaves</h3>
         <input

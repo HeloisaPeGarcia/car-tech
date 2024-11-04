@@ -429,7 +429,7 @@ button:hover {
   height: 100%; /* Garante que o filtro ocupe toda a altura disponível */
   width: 250px;
   padding: 20px;
-  background-color: #333;
+  background-color: #242424;
 }
 
 .filters h3 {
@@ -445,15 +445,8 @@ button:hover {
   margin-bottom: 5px;
 }
 
-.inventory-items {
-  height: 100%; /* Garante que o filtro ocupe toda a altura disponível */
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-
 .inventory-item {
+  color: white;
   height: 100%; /* Garante que o filtro ocupe toda a altura disponível */
   background-color: #2a2a2a;
   padding: 15px;
@@ -481,9 +474,11 @@ button:hover {
 }
 
 .inventory-item button:first-of-type {
+  border-radius: 4px;
   background-color: #4CAF50;
 }
 
 .inventory-item button:last-of-type {
+  border-radius: 4px;
   background-color: #f44336;
 }
