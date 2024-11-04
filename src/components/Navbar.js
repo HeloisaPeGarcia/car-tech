@@ -62,6 +62,26 @@ function Navbar() {
         </li>
         <li>
           <Link
+            to="/agendamento"
+            style={linkStyle}
+            onMouseEnter={(e) => e.target.style.backgroundColor = linkHoverStyle.backgroundColor}
+            onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
+          >
+            Agendamento
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/CadastroFerramenta"
+            style={linkStyle}
+            onMouseEnter={(e) => e.target.style.backgroundColor = linkHoverStyle.backgroundColor}
+            onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
+          >
+            Ferramentas
+          </Link>
+        </li>
+        <li>
+          <Link
             to="/form"
             style={linkStyle}
             onMouseEnter={(e) => e.target.style.backgroundColor = linkHoverStyle.backgroundColor}

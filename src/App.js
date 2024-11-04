@@ -13,6 +13,8 @@ import Login from './components/Login';
 import Estoque from './components/Estoque';
 import EditItemForm from './components/Edicao';
 import CadastrarServico from './components/CadastroServicos';
+import Agendamento from './components/Agendamento';
+import CadastroFerramenta from './components/CadastroFerramenta';
 import { Routes, Route, useLocation } from 'react-router-dom';
 
 function App() {
@@ -32,6 +34,8 @@ function App() {
           <Route path="/edicao" element={<EditItemForm />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/about" element={<Sobre />} />
+          <Route path="/about" element={<Sobre />} />
+          <Route path="/CadastroFerramenta" element={<CadastroFerramenta />} />
           <Route path="/form" element={<Form />} /> {/* Rota para o Formulário */}
         </Routes>
       </section>
