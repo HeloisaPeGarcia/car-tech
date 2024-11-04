@@ -34,13 +34,13 @@ function Login() {
 
 const styles = {
   container: {
+    backgroundcolor: "#1E1E1E",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    minHeight: "100vh",  // Define altura mínima para preencher a tela inteira
-    width: "100vw",       // Largura total da tela
-    backgroundColor: "#1a1a1a",
+    minHeight: "100vh",  
+    width: "100vw",       
     color: "#ffffff",
   },
   form: {
@@ -55,7 +55,6 @@ const styles = {
   input: {
     padding: "10px",
     fontSize: "16px",
-    backgroundColor: "#333333",
     border: "1px solid #444444",
     borderRadius: "5px",
     color: "#ffffff",
