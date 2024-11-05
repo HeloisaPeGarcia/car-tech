@@ -36,6 +36,7 @@ function App() {
           <Route path="/about" element={<Sobre />} />
           <Route path="/about" element={<Sobre />} />
           <Route path="/CadastroFerramenta" element={<CadastroFerramenta />} />
+          <Route path="/agendamento" element={<Agendamento />} />
           <Route path="/form" element={<Form />} /> {/* Rota para o Formulário */}
         </Routes>
       </section>
