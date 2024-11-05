@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Navbar from './Navbar';
 
 const CadastrarServico = () => {
   const [modelo, setModelo] = useState('');
@@ -15,8 +14,7 @@ const CadastrarServico = () => {
   };
 
   return (
-    <div>
-      <Navbar />
+    <div style={styles.backdrop}>
       <div style={styles.container}>
         <h1 style={styles.title}>Cadastrar Serviço</h1>
         <form onSubmit={handleSubmit} style={styles.form}>
@@ -58,6 +56,18 @@ const CadastrarServico = () => {
 };
 
 const styles = {
+  backdrop: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100vw',
+    height: '100vh',
+    backgroundColor: 'rgba(0, 0, 0, 0.8)', // Fundo escuro que cobre a tela inteira
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: 1000, // Certifique-se de que o modal esteja à frente de tudo
+  },
   container: {
     display: 'flex',
     flexDirection: 'column',
@@ -66,11 +76,14 @@ const styles = {
     color: '#fff',
     padding: '20px',
     borderRadius: '8px',
-    width: '300px',
-    margin: '0 auto',
+    width: '90%',
+    maxWidth: '400px',
+    boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.5)',
   },
   title: {
     marginBottom: '20px',
+    fontSize: '1.5em',
+    color: '#fff',
   },
   form: {
     width: '100%',
@@ -81,24 +94,31 @@ const styles = {
   label: {
     display: 'block',
     marginBottom: '5px',
+    color: '#ccc',
   },
   input: {
     width: '100%',
     padding: '8px',
     borderRadius: '4px',
-    border: '1px solid #ccc',
+    border: '1px solid #555',
+    backgroundColor: '#222',
+    color: '#fff',
   },
   select: {
     width: '100%',
     padding: '8px',
     borderRadius: '4px',
-    border: '1px solid #ccc',
+    border: '1px solid #555',
+    backgroundColor: '#222',
+    color: '#fff',
   },
   textarea: {
     width: '100%',
     padding: '8px',
     borderRadius: '4px',
-    border: '1px solid #ccc',
+    border: '1px solid #555',
+    backgroundColor: '#222',
+    color: '#fff',
     height: '80px',
   },
   button: {
@@ -109,6 +129,7 @@ const styles = {
     backgroundColor: '#fff',
     color: '#333',
     cursor: 'pointer',
+    fontWeight: 'bold',
   },
 };
 
