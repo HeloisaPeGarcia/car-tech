@@ -54,9 +54,17 @@ const styles = {
     color: '#ffffff', // Texto branco
     padding: '20px',
     borderRadius: '8px',
-    width: '300px',
-    margin: '0 auto',
-  },
+    width: '100%',
+    height: '100%',
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center', // Centraliza o conteúdo
+    boxSizing: 'border-box', // Garante que padding não afete width/height total
+},
+
   title: {
     textAlign: 'center',
     marginBottom: '20px',

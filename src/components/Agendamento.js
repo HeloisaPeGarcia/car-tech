@@ -26,26 +26,6 @@ function Agendamento() {
       <h2 style={styles.title}>Cadastro de Agendamento</h2>
       <form onSubmit={handleSubmit} style={styles.form}>
         <label style={styles.label}>
-          ID do Serviço:
-          <input
-            type="text"
-            name="id_servico"
-            value={formData.id_servico}
-            onChange={handleChange}
-            style={styles.input}
-          />
-        </label>
-        <label style={styles.label}>
-          ID do Administrador:
-          <input
-            type="text"
-            name="id_adm"
-            value={formData.id_adm}
-            onChange={handleChange}
-            style={styles.input}
-          />
-        </label>
-        <label style={styles.label}>
           Nome do Cliente:
           <input
             type="text"
@@ -83,11 +63,13 @@ function Agendamento() {
 
 const styles = {
   container: {
+    width: '100%',
+    height: '100%',
+    position: 'fixed',
     backgroundColor: '#333333', // Cinza escuro
     color: '#ffffff', // Texto branco
     padding: '20px',
     borderRadius: '8px',
-    width: '300px',
     margin: '0 auto',
   },
   title: {

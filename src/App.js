@@ -19,7 +19,8 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 
 function App() {
   const location = useLocation();
-  const isFullScreenRoute = location.pathname === '/estoque' || location.pathname === '/edicao';
+  const isFullScreenRoute = location.pathname === '/estoque' || location.pathname === '/edicao' || location.pathname === '/CadastroFerramenta'
+|| location.pathname === '/agendamento';
 
   return (
     <div className="App">
