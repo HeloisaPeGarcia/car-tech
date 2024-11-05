@@ -7,19 +7,19 @@ function TestimonialSection() {
       name: 'Ana Silva',
       title: '★★★★★',
       quote: 'Meu carro ficou como novo! Serviço excelente e atendimento impecável.',
-      image: 'https://via.placeholder.com/150',
+      image: 'https://cdn.icon-icons.com/icons2/3708/PNG/512/girl_female_woman_person_face_people_curly_hair_icon_230020.png',
     },
     {
       name: 'Bruno Santos',
       title: '★★★★★',
       quote: 'A customização esportiva ficou incrível. Recomendo a todos!',
-      image: 'https://via.placeholder.com/150',
+      image: 'https://cdn-icons-png.flaticon.com/512/4128/4128196.png',
     },
     {
       name: 'Matheus Ferraz',
       title: '★★★★★',
       quote: 'A revisão foi rápida e eficiente. Muito satisfeito com o serviço.',
-      image: 'https://via.placeholder.com/150',
+      image: 'https://icons-for-free.com/iff/png/512/business+face+people+icon-1320086457520622872.png',
     },
   ];
 
