@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import '../App.css';
 import Footer from './Footer';
-import Header from './Header';
+import Navbar from './Navbar';
 
 function Login() {
   const navigate = useNavigate(); // Inicializa o hook de navegação
@@ -14,7 +14,7 @@ function Login() {
 
   return (
     <section id="Login" className="page">
-      <Header />
+      <Navbar />
       <div style={styles.container}>
         <form style={styles.form} onSubmit={handleSubmit}>
           <label style={styles.label}>Email</label>

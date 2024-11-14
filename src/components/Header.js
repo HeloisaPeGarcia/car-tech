@@ -1,7 +1,7 @@
-import { Routes, Route, Link } from 'react-router-dom'; // Adicione o Link
+import {  Link } from 'react-router-dom'; // Adicione o Link
 import React from 'react';
 import '../App.css';
-import Login from './Login';
+
 
 function Header() {
   return (
@@ -12,7 +12,7 @@ function Header() {
       <nav>
         <ul>
           <li><a href="#services">Serviços</a></li>
-          <li><a href="#TestimonialSection">Contato</a></li>
+          <li><Link to="/form">Contato</Link></li>
           <li><a href="#Portfolio">Portfolio</a></li>
           <li><a href="#ContentSection">Sobre nós</a></li>
         </ul>
